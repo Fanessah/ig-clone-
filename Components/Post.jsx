@@ -1,18 +1,19 @@
-import { Card, Text,Avatar,Icon} from '@rneui/themed'
-import { View, ActivityIndicator,Image} from 'react-native'
+import { Card, Text, Avatar, Icon } from '@rneui/themed'
+import { View, ActivityIndicator, Image, TouchableOpacity } from 'react-native'
 import styles from '../styles'
 
-export default function Post ({post }) {
+export default function Post({ post, navigation }) {
 
     return (
         <View style={styles.card}>
-            <View style={styles.cardHeader}>
-                <Avatar source={{uri: post.profilePhoto}} rounded/>
+            <TouchableOpacity style={styles.cardHeader}
+                onPress={() => navigation.navigate('Post Details', { itemId: post.id})}>
+                <Avatar source={{ uri: post.profilePhoto }} rounded />
                 <Text style={styles.userName}>{post.userName} </Text>
-                
-            </View>
-            <Image source={{uri: post.photoURL}} style={styles.image}
-            PlaceholderContent={<ActivityIndicator/>} />
+
+            </TouchableOpacity>
+            <Image source={{ uri: post.photoURL }} style={styles.image}
+                PlaceholderContent={<ActivityIndicator />} />
 
             <Text style={styles.description}>{post.description}</Text>
         </View>

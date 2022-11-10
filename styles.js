@@ -2,7 +2,7 @@ import {StyleSheet} from 'react-native';
 
 const styles = StyleSheet.create({
     feed:{
-        marginTop: 36,
+        // marginTop: 36,
         flex:1,
         backgroundColor: 'white',
     },
@@ -11,12 +11,14 @@ card:{
 },
 description:{
     margin: 16,
+    fontSize: 18,
+    
 },
 image:{
     width: '100%',
     height: 320,
     // aspectRatio: 1,
-    flex: 1,
+    
 },
 cardHeader: {
     margin: 4,
